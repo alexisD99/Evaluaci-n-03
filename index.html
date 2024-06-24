@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTA FINAL DEL ESTUDIANTE</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <div class="logo">
+                <img src="img/certus logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="banner">
+            <img src="img/banner-tecnologia.jpg" alt="Banner">
+        </div>
+    </header>
+
+    <div class="info">
+        <p class="blue-text">
+            <b>Lenguajes para el desarrollo y Soporte de sistemas</b>
+        </p>
+        <div class="exit-screen">
+            <img src="img/cerrarsesion.png" alt="Salir de la Pantalla" id="exit-btn" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <main>
+        <h1 class="title">PROMEDIO FINAL DEL CURSO</h1>
+        
+        <div class="grades-table">
+            <div class="row">
+                <div class="label">Práctica 01</div>
+                <div class="value"><input type="number" id="practica1" step="0.01" min="0" max="20"></div>
+            </div>
+            <div class="row">
+                <div class="label">Práctica 02</div>
+                <div class="value"><input type="number" id="practica2" step="0.01" min="0" max="20"></div>
+            </div>
+            <div class="row">
+                <div class="label">Práctica 03</div>
+                <div class="value"><input type="number" id="practica3" step="0.01" min="0" max="20"></div>
+            </div>
+            <div class="row">
+                <div class="label">Promedio PP</div>
+                <div class="value"><input type="number" id="promedioPP" step="0.01" min="0" max="20" readonly></div>
+            </div>
+            <div class="row">
+                <div class="label">Ex. Final</div>
+                <div class="value"><input type="number" id="exFinal" step="0.01" min="0" max="20"></div>
+            </div>
+            <div class="row">
+                <div class="label">Promedio Final</div>
+                <div class="value"><input type="number" id="promedioFinal" step="0.01" min="0" max="20" readonly></div>
+            </div>
+            <div class="row">
+                <div class="label">Resultado</div>
+                <div class="value"><input type="text" id="resultado" readonly></div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="button" id="calculate-btn">Calcular</button>
+            <button type="button" id="clear-btn">Limpiar</button>
+            <button type="button" id="print-btn">Imprimir</button>
+        </div>
+    </main>
+
+    <footer>
+        <p class="author">Autor: Alexis Fabian Daza</p>
+    </footer>
+
+    <script>
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            let practica1 = parseFloat(document.getElementById('practica1').value) || 0;
+            let practica2 = parseFloat(document.getElementById('practica2').value) || 0;
+            let practica3 = parseFloat(document.getElementById('practica3').value) || 0;
+            let exFinal = parseFloat(document.getElementById('exFinal').value) || 0;
+
+            if (practica1 > 20 || practica2 > 20 || practica3 > 20 || exFinal > 20) {
+                document.getElementById('resultado').value = 'Numero invalido';
+                document.getElementById('resultado').style.color = 'red';
+                return;
+            }
+
+            let promedioPP = ((practica1 + practica2 + practica3) / 3).toFixed(2);
+            document.getElementById('promedioPP').value = promedioPP;
+
+            let promedioFinal = ((parseFloat(promedioPP) * 0.7) + (exFinal * 0.3)).toFixed(2);
+            document.getElementById('promedioFinal').value = promedioFinal;
+
+            let resultado = promedioFinal >= 13 ? 'Aprobado' : 'Desaprobado';
+            document.getElementById('resultado').value = resultado;
+            document.getElementById('resultado').style.color = promedioFinal >= 13 ? 'blue' : 'red';
+        });
+
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            document.getElementById('practica1').value = '';
+            document.getElementById('practica2').value = '';
+            document.getElementById('practica3').value = '';
+            document.getElementById('exFinal').value = '';
+            document.getElementById('promedioPP').value = '';
+            document.getElementById('promedioFinal').value = '';
+            document.getElementById('resultado').value = '';
+            document.getElementById('resultado').style.color = '';
+        });
+
+        document.getElementById('print-btn').addEventListener('click', function() {
+            window.print();
+        });
+
+        document.getElementById('exit-btn').addEventListener('click', function() {
+            window.close();
+        });
+    </script>
+</body>
+</html>

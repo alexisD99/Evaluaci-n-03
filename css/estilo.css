@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #a0bae1;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exit-screen {
+    margin-left: 10px;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo-right img {
+    height: 30px; 
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+.info {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.info p {
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.title {
+    text-align: center;
+    color: #082157;
+}
+
+.grades-table {
+    margin-top: 20px;
+    color: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.value {
+    flex: 1;
+}
+
+.value input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.value input#promedioPP,
+.value input#promedioFinal {
+    background-color: #4576ba;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button-group button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #004165;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #00354a;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px; 
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .author {
+    color: #fff;
+    padding: 5px 20px;
+    background-color: #000;
+    display: inline-block;
+    border-radius: 5px;
+}
+.author {
+    background-color: #4a5061;
+    color: #fff;
+    padding: 8px 0; 
+    text-align: center; 
+    margin-top: 20px;
+    width: 50%;
+    box-sizing: border-box; 
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #ffffff; 
+    color: #fff;
+    text-align: center; 
+    padding: 10px 0;
+}
